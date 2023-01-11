@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution238 {
     public int[] productExceptSelf(int[] nums) {
         return linearSolution(nums);
