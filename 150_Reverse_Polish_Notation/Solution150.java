@@ -5,7 +5,7 @@ class Solution150 {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < tokens.length; i++) {
             if (tokens[i].equals("+") || tokens[i].equals("-") || tokens[i].equals("*") || tokens[i].equals("/")) {
-                isOperator(tokens[i], stack);
+                performOperation(tokens[i], stack);
 
             } else {
                 stack.push(Integer.parseInt(tokens[i]));
@@ -15,7 +15,7 @@ class Solution150 {
 
     }
 
-    private static void isOperator(String s, Stack<Integer> stack) {
+    private static void performOperation(String s, Stack<Integer> stack) {
         if (!stack.isEmpty()) {
             switch (s) {
                 case "+":
