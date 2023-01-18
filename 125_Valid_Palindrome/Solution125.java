@@ -1,3 +1,32 @@
+@SuppressWarnings("unused")
+class Solution125 {
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+    public boolean solution1(String s) {
+        int leftPointer = 0, rightPointer = s.length() - 1;
+
+        while (leftPointer < rightPointer) {
+            char leftChar = s.charAt(leftPointer);
+            char rightChar = s.charAt(rightPointer);
+            if (!Character.isLetterOrDigit(leftChar)) {
+                leftPointer++;
+                continue;
+            }
+            if (!Character.isLetterOrDigit(rightChar)) {
+                rightPointer--;
+                continue;
+            }
+
+            if (Character.toLowerCase(leftChar) != Character.toLowerCase(rightChar)) {
+                return false;
+            }
+            leftPointer++;
+            rightPointer--;
+        }
+        return true;
+
+    }
+
     // Time Complexity: O(n)
     // Space Complexity: O(n)
     private boolean solution2(String s) {
@@ -24,3 +53,9 @@
         }
         return true;
     }
+
+    public boolean isPalindrome(String s) {
+        return solution1(s);
+    }
+
+}
